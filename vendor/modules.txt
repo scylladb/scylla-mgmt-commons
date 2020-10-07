@@ -1,0 +1,83 @@
+# github.com/PuerkitoBio/purell v1.1.1
+github.com/PuerkitoBio/purell
+# github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578
+github.com/PuerkitoBio/urlesc
+# github.com/asaskevich/govalidator v0.0.0-20200428143746-21a406dcc535
+github.com/asaskevich/govalidator
+# github.com/go-openapi/analysis v0.19.10
+github.com/go-openapi/analysis
+github.com/go-openapi/analysis/internal
+# github.com/go-openapi/errors v0.19.7
+github.com/go-openapi/errors
+# github.com/go-openapi/jsonpointer v0.19.3
+github.com/go-openapi/jsonpointer
+# github.com/go-openapi/jsonreference v0.19.3
+github.com/go-openapi/jsonreference
+# github.com/go-openapi/loads v0.19.5
+github.com/go-openapi/loads
+# github.com/go-openapi/runtime v0.19.22
+github.com/go-openapi/runtime
+# github.com/go-openapi/spec v0.19.8
+github.com/go-openapi/spec
+# github.com/go-openapi/strfmt v0.19.5
+github.com/go-openapi/strfmt
+# github.com/go-openapi/swag v0.19.9
+github.com/go-openapi/swag
+# github.com/go-openapi/validate v0.19.11
+github.com/go-openapi/validate
+# github.com/go-stack/stack v1.8.0
+github.com/go-stack/stack
+# github.com/gocql/gocql v0.0.0-20200926162733-393f0c961220
+github.com/gocql/gocql
+github.com/gocql/gocql/internal/lru
+github.com/gocql/gocql/internal/murmur
+github.com/gocql/gocql/internal/streams
+# github.com/golang/snappy v0.0.1
+github.com/golang/snappy
+# github.com/hailocab/go-hostpool v0.0.0-20160125115350-e80d13ce29ed
+github.com/hailocab/go-hostpool
+# github.com/mailru/easyjson v0.7.1
+github.com/mailru/easyjson/buffer
+github.com/mailru/easyjson/jlexer
+github.com/mailru/easyjson/jwriter
+# github.com/mitchellh/mapstructure v1.3.2
+github.com/mitchellh/mapstructure
+# github.com/pkg/errors v0.9.1
+github.com/pkg/errors
+# github.com/scylladb/scylla-mgmt-commons/format v0.0.0-20201007123433-27727073dfc6 => ./format
+## explicit
+github.com/scylladb/scylla-mgmt-commons/format
+# github.com/scylladb/scylla-mgmt-commons/managerclient v0.0.0-20201007123433-27727073dfc6 => ./managerclient
+## explicit
+github.com/scylladb/scylla-mgmt-commons/managerclient
+github.com/scylladb/scylla-mgmt-commons/managerclient/models
+# github.com/scylladb/scylla-mgmt-commons/timeutc v0.0.0-20201007123433-27727073dfc6 => ./timeutc
+## explicit
+github.com/scylladb/scylla-mgmt-commons/timeutc
+# github.com/scylladb/scylla-mgmt-commons/uuid v0.0.0-20201007123433-27727073dfc6 => ./uuid
+## explicit
+github.com/scylladb/scylla-mgmt-commons/uuid
+# go.mongodb.org/mongo-driver v1.3.4
+go.mongodb.org/mongo-driver/bson
+go.mongodb.org/mongo-driver/bson/bsoncodec
+go.mongodb.org/mongo-driver/bson/bsonoptions
+go.mongodb.org/mongo-driver/bson/bsonrw
+go.mongodb.org/mongo-driver/bson/bsontype
+go.mongodb.org/mongo-driver/bson/primitive
+go.mongodb.org/mongo-driver/x/bsonx/bsoncore
+# golang.org/x/net v0.0.0-20200602114024-627f9648deb9
+golang.org/x/net/idna
+# golang.org/x/text v0.3.2
+golang.org/x/text/secure/bidirule
+golang.org/x/text/transform
+golang.org/x/text/unicode/bidi
+golang.org/x/text/unicode/norm
+golang.org/x/text/width
+# gopkg.in/inf.v0 v0.9.1
+gopkg.in/inf.v0
+# gopkg.in/yaml.v2 v2.3.0
+gopkg.in/yaml.v2
+# github.com/scylladb/scylla-mgmt-commons/format => ./format
+# github.com/scylladb/scylla-mgmt-commons/managerclient => ./managerclient
+# github.com/scylladb/scylla-mgmt-commons/timeutc => ./timeutc
+# github.com/scylladb/scylla-mgmt-commons/uuid => ./uuid
