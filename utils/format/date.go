@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	"github.com/scylladb/scylla-mgmt-commons/timeutc"
+	"github.com/scylladb/scylla-mgmt-commons/utils/timeutc"
 )
 
 const (

@@ -5,7 +5,7 @@ package middleware
 import (
 	"net/http"
 
-	"github.com/scylladb/scylla-mgmt-commons/httpx"
+	"github.com/scylladb/scylla-mgmt-commons/utils/httpx"
 )
 
 // AddToken sets authorization header. If token is empty it immediately returns

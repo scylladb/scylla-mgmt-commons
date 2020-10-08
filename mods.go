@@ -8,12 +8,12 @@ package scylla_mgmt_commons
 // entire repo.
 
 import (
-	_ "github.com/scylladb/scylla-mgmt-commons/format"
-	_ "github.com/scylladb/scylla-mgmt-commons/httpx"
 	_ "github.com/scylladb/scylla-mgmt-commons/managerclient"
-	_ "github.com/scylladb/scylla-mgmt-commons/middleware"
-	_ "github.com/scylladb/scylla-mgmt-commons/retry"
 	_ "github.com/scylladb/scylla-mgmt-commons/scyllaclient"
-	_ "github.com/scylladb/scylla-mgmt-commons/timeutc"
-	_ "github.com/scylladb/scylla-mgmt-commons/uuid"
+	_ "github.com/scylladb/scylla-mgmt-commons/utils/format"
+	_ "github.com/scylladb/scylla-mgmt-commons/utils/httpx"
+	_ "github.com/scylladb/scylla-mgmt-commons/utils/middleware"
+	_ "github.com/scylladb/scylla-mgmt-commons/utils/retry"
+	_ "github.com/scylladb/scylla-mgmt-commons/utils/timeutc"
+	_ "github.com/scylladb/scylla-mgmt-commons/utils/uuid"
 )

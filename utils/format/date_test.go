@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/scylladb/scylla-mgmt-commons/timeutc"
+	"github.com/scylladb/scylla-mgmt-commons/utils/timeutc"
 )
 
 func TestParseStartDate(t *testing.T) {

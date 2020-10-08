@@ -5,7 +5,7 @@ package middleware
 import (
 	"net/http"
 
-	"github.com/scylladb/scylla-mgmt-commons/httpx"
+	"github.com/scylladb/scylla-mgmt-commons/utils/httpx"
 )
 
 // FixScyllaContentType adjusts Scylla REST API response so that it can be consumed

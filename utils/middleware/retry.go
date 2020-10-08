@@ -7,7 +7,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/scylladb/scylla-mgmt-commons/retry"
+	"github.com/scylladb/scylla-mgmt-commons/utils/retry"
 
 	"github.com/go-openapi/runtime"
 	"github.com/pkg/errors"

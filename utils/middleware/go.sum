@@ -160,12 +160,6 @@ github.com/rogpeppe/go-internal v1.2.2/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFR
 github.com/rogpeppe/go-internal v1.3.0/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFRclV5y23lUDJ4=
 github.com/scylladb/go-log v0.0.4 h1:/bzRRcdQueZGOAxvRmvAiaPutgyde45KG53cfOfVnTY=
 github.com/scylladb/go-log v0.0.4/go.mod h1:77kz90eX2HHKZUL4Os8on7+8t1CmF6oiSqsgX9Hg+30=
-github.com/scylladb/scylla-mgmt-commons/httpx v0.0.0-20201007133817-3a5a9f249639 h1:Qx4uiDicTKRuLFK7oLpuoQgXu7WUXHpxALVUv0OrxTA=
-github.com/scylladb/scylla-mgmt-commons/httpx v0.0.0-20201007133817-3a5a9f249639/go.mod h1:B7jyZ8kCb5hYBB03W2eyzSwXG8eTYSX5vMiRa2vysyc=
-github.com/scylladb/scylla-mgmt-commons/retry v0.0.0-20201007133817-3a5a9f249639 h1:WOnfJNVVyf039qigkIAAlaB+IRygqUZKKAIaDhw0XK8=
-github.com/scylladb/scylla-mgmt-commons/retry v0.0.0-20201007133817-3a5a9f249639/go.mod h1:qsO2xATuzp/T94SGD/5dRdSTMuz3gamSK56Cek4zCgs=
-github.com/scylladb/scylla-mgmt-commons/timeutc v0.0.0-20201007133817-3a5a9f249639 h1:wGbiMEsnKdkTWCliSE6AKj7W+NSoeJCTbFXxSIvuVh4=
-github.com/scylladb/scylla-mgmt-commons/timeutc v0.0.0-20201007133817-3a5a9f249639/go.mod h1:+KrXCqYYKIkyqNWxG1wYqFOcY3zhj5mQsk8U30ZP6sQ=
 github.com/sirupsen/logrus v1.4.0/go.mod h1:LxeOpSwHxABJmUn/MG1IvRgCAasNZTLOkJPxbbu5VWo=
 github.com/sirupsen/logrus v1.4.1/go.mod h1:ni0Sbl8bgC9z8RoU9G6nDWqqs/fq4eDPysMBDgk/93Q=
 github.com/sirupsen/logrus v1.4.2/go.mod h1:tLMulIdttU9McNUspp0xgXVQah82FyeX6MwdIuYE2rE=

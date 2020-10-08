@@ -9,9 +9,9 @@ require (
 	github.com/hailocab/go-hostpool v0.0.0-20160125115350-e80d13ce29ed
 	github.com/pkg/errors v0.9.1
 	github.com/scylladb/go-log v0.0.4
-	github.com/scylladb/scylla-mgmt-commons/utils/httpx v0.0.0-20201007133817-3a5a9f249639
-	github.com/scylladb/scylla-mgmt-commons/utils/retry v0.0.0-20201007133817-3a5a9f249639
-	github.com/scylladb/scylla-mgmt-commons/utils/timeutc v0.0.0-20201007133817-3a5a9f249639
+	github.com/scylladb/scylla-mgmt-commons/utils/httpx v0.0.0-20201008140841-cc57d906f71c
+	github.com/scylladb/scylla-mgmt-commons/utils/retry v0.0.0-20201008140841-cc57d906f71c
+	github.com/scylladb/scylla-mgmt-commons/utils/timeutc v0.0.0-20201008140841-cc57d906f71c
 )
 
 replace (

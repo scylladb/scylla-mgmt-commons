@@ -10,8 +10,8 @@ import (
 
 	"github.com/pkg/errors"
 	"github.com/scylladb/go-log"
-	"github.com/scylladb/scylla-mgmt-commons/httpx"
-	"github.com/scylladb/scylla-mgmt-commons/timeutc"
+	"github.com/scylladb/scylla-mgmt-commons/utils/httpx"
+	"github.com/scylladb/scylla-mgmt-commons/utils/timeutc"
 )
 
 // RequestLogger logs requests and responses.
