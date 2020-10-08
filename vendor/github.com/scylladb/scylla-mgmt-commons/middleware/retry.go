@@ -3,6 +3,7 @@
 package middleware
 
 import (
+	"context"
 	"net/url"
 	"time"
 
@@ -159,4 +160,25 @@ func unpackURLError(err error) error {
 	}
 
 	return err
+}
+
+// Interactive context means that it should be processed fast without too much
+// useless waiting.
+func Interactive(ctx context.Context) context.Context {
+	return context.WithValue(ctx, ctxInteractive, true)
+}
+
+func isInteractive(ctx context.Context) bool {
+	_, ok := ctx.Value(ctxInteractive).(bool)
+	return ok
+}
+
+func isForceHost(ctx context.Context) bool {
+	_, ok := ctx.Value(ctxHost).(string)
+	return ok
+}
+
+// NoRetry disables retries.
+func NoRetry(ctx context.Context) context.Context {
+	return context.WithValue(ctx, ctxNoRetry, true)
 }

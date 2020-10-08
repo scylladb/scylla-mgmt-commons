@@ -50,26 +50,31 @@ github.com/mitchellh/mapstructure
 github.com/pkg/errors
 # github.com/scylladb/go-log v0.0.4
 github.com/scylladb/go-log
-# github.com/scylladb/scylla-mgmt-commons/format v0.0.0-20201007123433-27727073dfc6 => ./format
+# github.com/scylladb/scylla-mgmt-commons/format v0.0.0-20201007133817-3a5a9f249639 => ./utils/format
 ## explicit
 github.com/scylladb/scylla-mgmt-commons/format
-# github.com/scylladb/scylla-mgmt-commons/httpx v0.0.0-00010101000000-000000000000 => ./httpx
+# github.com/scylladb/scylla-mgmt-commons/httpx v0.0.0-20201007133817-3a5a9f249639 => ./utils/httpx
 ## explicit
 github.com/scylladb/scylla-mgmt-commons/httpx
-# github.com/scylladb/scylla-mgmt-commons/managerclient v0.0.0-20201007123433-27727073dfc6 => ./managerclient
+# github.com/scylladb/scylla-mgmt-commons/managerclient v0.0.0-20201007133817-3a5a9f249639 => ./managerclient
 ## explicit
 github.com/scylladb/scylla-mgmt-commons/managerclient
 github.com/scylladb/scylla-mgmt-commons/managerclient/models
-# github.com/scylladb/scylla-mgmt-commons/middleware v0.0.0-00010101000000-000000000000 => ./middleware
+# github.com/scylladb/scylla-mgmt-commons/middleware v0.0.0-20201007133817-3a5a9f249639 => ./utils/middleware
 ## explicit
 github.com/scylladb/scylla-mgmt-commons/middleware
-# github.com/scylladb/scylla-mgmt-commons/retry v0.0.0-00010101000000-000000000000 => ./retry
+# github.com/scylladb/scylla-mgmt-commons/retry v0.0.0-20201007133817-3a5a9f249639 => ./utils/retry
 ## explicit
 github.com/scylladb/scylla-mgmt-commons/retry
-# github.com/scylladb/scylla-mgmt-commons/timeutc v0.0.0-20201007123433-27727073dfc6 => ./timeutc
+# github.com/scylladb/scylla-mgmt-commons/scyllaclient v0.0.0-20201007133817-3a5a9f249639 => ./scyllaclient
+## explicit
+github.com/scylladb/scylla-mgmt-commons/scyllaclient
+github.com/scylladb/scylla-mgmt-commons/scyllaclient/agent/models
+github.com/scylladb/scylla-mgmt-commons/scyllaclient/scylla_v2/models
+# github.com/scylladb/scylla-mgmt-commons/timeutc v0.0.0-20201007133817-3a5a9f249639 => ./utils/timeutc
 ## explicit
 github.com/scylladb/scylla-mgmt-commons/timeutc
-# github.com/scylladb/scylla-mgmt-commons/uuid v0.0.0-20201007123433-27727073dfc6 => ./uuid
+# github.com/scylladb/scylla-mgmt-commons/uuid v0.0.0-20201007133817-3a5a9f249639 => ./utils/uuid
 ## explicit
 github.com/scylladb/scylla-mgmt-commons/uuid
 # go.mongodb.org/mongo-driver v1.3.4
@@ -150,11 +155,11 @@ honnef.co/go/tools/staticcheck/vrp
 honnef.co/go/tools/stylecheck
 honnef.co/go/tools/unused
 honnef.co/go/tools/version
-# github.com/scylladb/scylla-mgmt-commons/format => ./format
-# github.com/scylladb/scylla-mgmt-commons/httpx => ./httpx
+# github.com/scylladb/scylla-mgmt-commons/format => ./utils/format
+# github.com/scylladb/scylla-mgmt-commons/httpx => ./utils/httpx
 # github.com/scylladb/scylla-mgmt-commons/managerclient => ./managerclient
-# github.com/scylladb/scylla-mgmt-commons/middleware => ./middleware
-# github.com/scylladb/scylla-mgmt-commons/retry => ./retry
+# github.com/scylladb/scylla-mgmt-commons/middleware => ./utils/middleware
+# github.com/scylladb/scylla-mgmt-commons/retry => ./utils/retry
 # github.com/scylladb/scylla-mgmt-commons/scyllaclient => ./scyllaclient
-# github.com/scylladb/scylla-mgmt-commons/timeutc => ./timeutc
-# github.com/scylladb/scylla-mgmt-commons/uuid => ./uuid
+# github.com/scylladb/scylla-mgmt-commons/timeutc => ./utils/timeutc
+# github.com/scylladb/scylla-mgmt-commons/uuid => ./utils/uuid

@@ -52,3 +52,17 @@ func Timeout(next http.RoundTripper, timeout time.Duration) http.RoundTripper {
 		return next.RoundTrip(req.WithContext(ctx))
 	})
 }
+
+// CustomTimeout allows to pass a custom timeout to timeout middleware.
+//
+// WARNING: Usually this is a workaround for Scylla or other API slowness
+// in field condition i.e. with tons of data. This is the last resort of
+// defense please use with care.
+func CustomTimeout(ctx context.Context, d time.Duration) context.Context {
+	return context.WithValue(ctx, ctxCustomTimeout, d)
+}
+
+func hasCustomTimeout(ctx context.Context) (time.Duration, bool) {
+	v, ok := ctx.Value(ctxCustomTimeout).(time.Duration)
+	return v, ok
+}

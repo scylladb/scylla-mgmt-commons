@@ -14,12 +14,12 @@ require (
 )
 
 replace (
-	github.com/scylladb/scylla-mgmt-commons/format => ./format
-	github.com/scylladb/scylla-mgmt-commons/httpx => ./httpx
+	github.com/scylladb/scylla-mgmt-commons/format => ./utils/format
+	github.com/scylladb/scylla-mgmt-commons/httpx => ./utils/httpx
 	github.com/scylladb/scylla-mgmt-commons/managerclient => ./managerclient
-	github.com/scylladb/scylla-mgmt-commons/middleware => ./middleware
-	github.com/scylladb/scylla-mgmt-commons/retry => ./retry
+	github.com/scylladb/scylla-mgmt-commons/middleware => ./utils/middleware
+	github.com/scylladb/scylla-mgmt-commons/retry => ./utils/retry
 	github.com/scylladb/scylla-mgmt-commons/scyllaclient => ./scyllaclient
-	github.com/scylladb/scylla-mgmt-commons/timeutc => ./timeutc
-	github.com/scylladb/scylla-mgmt-commons/uuid => ./uuid
+	github.com/scylladb/scylla-mgmt-commons/timeutc => ./utils/timeutc
+	github.com/scylladb/scylla-mgmt-commons/uuid => ./utils/uuid
 )

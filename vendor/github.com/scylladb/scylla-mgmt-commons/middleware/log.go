@@ -14,8 +14,8 @@ import (
 	"github.com/scylladb/scylla-mgmt-commons/timeutc"
 )
 
-// requestLogger logs requests and responses.
-func requestLogger(next http.RoundTripper, logger log.Logger) http.RoundTripper {
+// RequestLogger logs requests and responses.
+func RequestLogger(next http.RoundTripper, logger log.Logger) http.RoundTripper {
 	return httpx.RoundTripperFunc(func(req *http.Request) (resp *http.Response, err error) {
 		start := timeutc.Now()
 		resp, err = next.RoundTrip(req)

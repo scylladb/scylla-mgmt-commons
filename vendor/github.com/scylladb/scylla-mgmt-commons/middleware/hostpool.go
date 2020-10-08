@@ -3,6 +3,7 @@
 package middleware
 
 import (
+	"context"
 	"net"
 	"net/http"
 
@@ -13,7 +14,7 @@ import (
 
 var errPoolServerError = errors.New("server error")
 
-// hostPool sets request host from a pool.
+// HostPool sets request host from a pool.
 func HostPool(next http.RoundTripper, pool hostpool.HostPool, port string) http.RoundTripper {
 	return httpx.RoundTripperFunc(func(req *http.Request) (*http.Response, error) {
 		ctx := req.Context()
@@ -63,4 +64,10 @@ func HostPool(next http.RoundTripper, pool hostpool.HostPool, port string) http.
 
 		return resp, err
 	})
+}
+
+// ForceHost makes hostPool middleware use the given host instead of selecting
+// one.
+func ForceHost(ctx context.Context, host string) context.Context {
+	return context.WithValue(ctx, ctxHost, host)
 }
