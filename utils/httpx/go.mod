@@ -1,1 +1,1 @@
-module "github.com/scylladb/scylla-mgmt-commons/httpx"
+module "github.com/scylladb/scylla-mgmt-commons/utils/httpx"

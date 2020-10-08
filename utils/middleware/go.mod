@@ -1,4 +1,4 @@
-module github.com/scylladb/scylla-mgmt-commons/middleware
+module github.com/scylladb/scylla-mgmt-commons/utils/middleware
 
 go 1.14
 
@@ -9,13 +9,13 @@ require (
 	github.com/hailocab/go-hostpool v0.0.0-20160125115350-e80d13ce29ed
 	github.com/pkg/errors v0.9.1
 	github.com/scylladb/go-log v0.0.4
-	github.com/scylladb/scylla-mgmt-commons/httpx v0.0.0-20201007133817-3a5a9f249639
-	github.com/scylladb/scylla-mgmt-commons/retry v0.0.0-20201007133817-3a5a9f249639
-	github.com/scylladb/scylla-mgmt-commons/timeutc v0.0.0-20201007133817-3a5a9f249639
+	github.com/scylladb/scylla-mgmt-commons/utils/httpx v0.0.0-20201007133817-3a5a9f249639
+	github.com/scylladb/scylla-mgmt-commons/utils/retry v0.0.0-20201007133817-3a5a9f249639
+	github.com/scylladb/scylla-mgmt-commons/utils/timeutc v0.0.0-20201007133817-3a5a9f249639
 )
 
 replace (
-	github.com/scylladb/scylla-mgmt-commons/httpx => ../httpx
-	github.com/scylladb/scylla-mgmt-commons/retry => ../retry
-	github.com/scylladb/scylla-mgmt-commons/timeutc => ../timeutc
+	github.com/scylladb/scylla-mgmt-commons/utils/httpx => ../httpx
+	github.com/scylladb/scylla-mgmt-commons/utils/retry => ../retry
+	github.com/scylladb/scylla-mgmt-commons/utils/timeutc => ../timeutc
 )

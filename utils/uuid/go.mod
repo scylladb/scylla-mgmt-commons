@@ -1,4 +1,4 @@
-module github.com/scylladb/scylla-mgmt-commons/uuid
+module github.com/scylladb/scylla-mgmt-commons/utils/uuid
 
 go 1.14
 

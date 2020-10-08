@@ -1,4 +1,4 @@
-module github.com/scylladb/scylla-mgmt-commons/retry
+module github.com/scylladb/scylla-mgmt-commons/utils/retry
 
 go 1.14
 
