@@ -200,6 +200,41 @@ func (a *Client) JobInfo(params *JobInfoParams) (*JobInfoOK, error) {
 }
 
 /*
+JobProgress returns aggregated job stats
+
+Returns aggregated job stats
+*/
+func (a *Client) JobProgress(params *JobProgressParams) (*JobProgressOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewJobProgressParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "JobProgress",
+		Method:             "POST",
+		PathPattern:        "/rclone/job/progress",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &JobProgressReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*JobProgressOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*JobProgressDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
 JobStop stops async job
 
 Stops job with provided ID
@@ -550,6 +585,41 @@ func (a *Client) OperationsPurge(params *OperationsPurgeParams) (*OperationsPurg
 }
 
 /*
+Reload reloads agent config
+
+Reload agent config
+*/
+func (a *Client) Reload(params *ReloadParams) (*ReloadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewReloadParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "Reload",
+		Method:             "POST",
+		PathPattern:        "/terminate",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ReloadReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ReloadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ReloadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
 SyncCopy copies directory
 
 Copy a directory from source remote to destination remote
@@ -581,6 +651,41 @@ func (a *Client) SyncCopy(params *SyncCopyParams) (*SyncCopyOK, error) {
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*SyncCopyDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+SyncCopyDir copies dir contents to directory
+
+Copy contents from path on source fs to path on destination fs
+*/
+func (a *Client) SyncCopyDir(params *SyncCopyDirParams) (*SyncCopyDirOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewSyncCopyDirParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "SyncCopyDir",
+		Method:             "POST",
+		PathPattern:        "/rclone/sync/copydir",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &SyncCopyDirReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*SyncCopyDirOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*SyncCopyDirDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

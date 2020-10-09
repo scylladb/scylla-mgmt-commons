@@ -31,7 +31,7 @@ func (b body) Close() error {
 // Timeout sets request context timeout for individual requests.
 func Timeout(next http.RoundTripper, timeout time.Duration) http.RoundTripper {
 	return httpx.RoundTripperFunc(func(req *http.Request) (resp *http.Response, err error) {
-		d, ok := hasCustomTimeout(req.Context())
+		d, ok := HasCustomTimeout(req.Context())
 		if !ok {
 			d = timeout
 		}
@@ -62,7 +62,22 @@ func CustomTimeout(ctx context.Context, d time.Duration) context.Context {
 	return context.WithValue(ctx, ctxCustomTimeout, d)
 }
 
-func hasCustomTimeout(ctx context.Context) (time.Duration, bool) {
+// HasCustomTimeout returns whether context has custom timeout set.
+func HasCustomTimeout(ctx context.Context) (time.Duration, bool) {
 	v, ok := ctx.Value(ctxCustomTimeout).(time.Duration)
 	return v, ok
+}
+
+// NoTimeout disables Timeout middleware.
+//
+// WARNING: Usually this is a workaround for Scylla or other API slowness
+// in field condition i.e. with tons of data. This is the last resort of
+// defense please use with care.
+func NoTimeout(ctx context.Context) context.Context {
+	return context.WithValue(ctx, ctxNoTimeout, true)
+}
+
+func hasNoTimeout(ctx context.Context) bool {
+	_, ok := ctx.Value(ctxNoTimeout).(bool)
+	return ok
 }

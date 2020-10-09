@@ -10,5 +10,6 @@ const (
 	ctxInteractive ctxt = iota
 	ctxHost
 	ctxNoRetry
+	ctxNoTimeout
 	ctxCustomTimeout
 )

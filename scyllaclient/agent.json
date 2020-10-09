@@ -340,6 +340,58 @@
         "security": []
       }
     },
+    "/rclone/sync/copydir": {
+      "post": {
+        "description": "Copy contents from path on source fs to path on destination fs",
+        "summary": "Copy dir contents to directory",
+        "operationId": "SyncCopyDir",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "_async",
+            "description": "Async request",
+            "type": "boolean",
+            "required": true,
+            "default": true
+          },
+          {
+            "in": "query",
+            "name": "_group",
+            "description": "Place this operation under this stat group",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "copydir2",
+            "description": "copydir2",
+            "schema": {
+              "$ref": "#/definitions/MoveOrCopyFileOptions"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Job ID",
+            "schema": {
+              "$ref": "#/definitions/Jobid"
+            },
+            "headers": {}
+          },
+          "default": {
+            "description": "Server error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
     "/rclone/sync/copy": {
       "post": {
         "description": "Copy a directory from source remote to destination remote",
@@ -618,6 +670,43 @@
         "security": []
       }
     },
+    "/rclone/job/progress": {
+      "post": {
+        "description": "Returns aggregated job stats",
+        "summary": "Returns aggregated job stats",
+        "operationId": "JobProgress",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "jobinfo",
+            "description": "Job info params with id and long polling",
+            "schema": {
+              "$ref": "#/definitions/JobInfoParams"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Aggregated info about job transfers",
+            "schema": {
+              "$ref": "#/definitions/JobProgress"
+            },
+            "headers": {}
+          },
+          "default": {
+            "description": "Server error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
     "/node_info": {
       "get": {
         "description": "Get information about Scylla node",
@@ -631,6 +720,34 @@
             "description": "node information",
             "schema": {
               "$ref": "#/definitions/NodeInfo"
+            },
+            "headers": {}
+          },
+          "default": {
+            "description": "Server error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/terminate": {
+      "post": {
+        "description": "Reload agent config",
+        "summary": "Reload agent config",
+        "operationId": "Reload",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Empty object",
+            "schema": {
+              "type": "object"
             },
             "headers": {}
           },
@@ -1027,6 +1144,42 @@
         }
       }
     },
+    "JobProgress": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "description": "status of the job",
+          "type": "string",
+          "enum": ["success", "error", "running", "not_found"]
+        },
+        "started_at": {
+          "description": "time at which job started",
+          "type": "string",
+          "format": "date-time"
+        },
+        "completed_at": {
+          "description": "time at which job completed ",
+          "type": "string",
+          "format": "date-time"
+        },
+        "error": {
+          "description": "string description of the error (empty if successful)",
+          "type": "string"
+        },
+        "uploaded": {
+          "description": "number of bytes that are successfully uploaded",
+          "type": "integer"
+        },
+        "skipped": {
+          "description": "number of bytes that were skipped",
+          "type": "integer"
+        },
+        "failed": {
+          "description": "number of bytes that failed transfer",
+          "type": "integer"
+        }
+      }
+    },
     "Stats": {
       "type": "object",
       "properties": {
@@ -1135,6 +1288,10 @@
           "description": "Port for the CQL native transport to listen for clients on.",
           "type": "string"
         },
+        "native_transport_port_ssl": {
+          "description": "Port for the encrypted CQL native transport to listen for clients on.",
+          "type": "string"
+        },
         "rpc_address": {
           "description": "Address on which Scylla is going to expect Thrift and CQL clients connections.",
           "type": "string"
@@ -1165,6 +1322,54 @@
         },
         "prometheus_port": {
           "description": "Port for Prometheus server.",
+          "type": "string"
+        },
+        "client_encryption_enabled": {
+          "description": "Whether client encryption is enabled.",
+          "type": "boolean"
+        },
+        "client_encryption_require_auth": {
+          "description": "Whether client authorization is required.",
+          "type": "boolean"
+        },
+        "cql_password_protected": {
+          "description": "Whether CQL requires password authentication.",
+          "type": "boolean"
+        },
+        "alternator_port": {
+          "description": "Port for Alternator API server.",
+          "type": "string"
+        },
+        "alternator_https_port": {
+          "description": "Port for Alternator HTTPS API server.",
+          "type": "string"
+        },
+        "alternator_address": {
+          "description": "Address for Alternator API requests.",
+          "type": "string"
+        },
+        "alternator_enforce_authorization": {
+          "description": "Whether Alternator requires authentication.",
+          "type": "boolean"
+        },
+        "memory_total": {
+          "description": "Total available memory.",
+          "type": "integer"
+        },
+        "uptime": {
+          "description": "Uptime in seconds.",
+          "type": "integer"
+        },
+        "cpu_count": {
+          "description": "Logical CPU count.",
+          "type": "integer"
+        },
+        "scylla_version": {
+          "description": "Scylla version.",
+          "type": "string"
+        },
+        "agent_version": {
+          "description": "Scylla Manager Agent version.",
           "type": "string"
         }
       }

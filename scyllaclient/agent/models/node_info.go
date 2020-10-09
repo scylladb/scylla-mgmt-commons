@@ -17,6 +17,21 @@ import (
 // swagger:model NodeInfo
 type NodeInfo struct {
 
+	// Scylla Manager Agent version.
+	AgentVersion string `json:"agent_version,omitempty"`
+
+	// Address for Alternator API requests.
+	AlternatorAddress string `json:"alternator_address,omitempty"`
+
+	// Whether Alternator requires authentication.
+	AlternatorEnforceAuthorization bool `json:"alternator_enforce_authorization,omitempty"`
+
+	// Port for Alternator HTTPS API server.
+	AlternatorHTTPSPort string `json:"alternator_https_port,omitempty"`
+
+	// Port for Alternator API server.
+	AlternatorPort string `json:"alternator_port,omitempty"`
+
 	// Address for REST API requests.
 	APIAddress string `json:"api_address,omitempty"`
 
@@ -29,11 +44,29 @@ type NodeInfo struct {
 	// Address that is broadcasted to tell the clients to connect to.
 	BroadcastRPCAddress string `json:"broadcast_rpc_address,omitempty"`
 
+	// Whether client encryption is enabled.
+	ClientEncryptionEnabled bool `json:"client_encryption_enabled,omitempty"`
+
+	// Whether client authorization is required.
+	ClientEncryptionRequireAuth bool `json:"client_encryption_require_auth,omitempty"`
+
+	// Logical CPU count.
+	CPUCount int64 `json:"cpu_count,omitempty"`
+
+	// Whether CQL requires password authentication.
+	CqlPasswordProtected bool `json:"cql_password_protected,omitempty"`
+
 	// Address Scylla listens for connections from other nodes.
 	ListenAddress string `json:"listen_address,omitempty"`
 
+	// Total available memory.
+	MemoryTotal int64 `json:"memory_total,omitempty"`
+
 	// Port for the CQL native transport to listen for clients on.
 	NativeTransportPort string `json:"native_transport_port,omitempty"`
+
+	// Port for the encrypted CQL native transport to listen for clients on.
+	NativeTransportPortSsl string `json:"native_transport_port_ssl,omitempty"`
 
 	// Address for Prometheus queries.
 	PrometheusAddress string `json:"prometheus_address,omitempty"`
@@ -46,6 +79,12 @@ type NodeInfo struct {
 
 	// Port for Thrift to listen for clients on.
 	RPCPort string `json:"rpc_port,omitempty"`
+
+	// Scylla version.
+	ScyllaVersion string `json:"scylla_version,omitempty"`
+
+	// Uptime in seconds.
+	Uptime int64 `json:"uptime,omitempty"`
 }
 
 // Validate validates this node info
